@@ -13,11 +13,11 @@ exports.addResume = async (req, res) => {
   try {
     const { job_desc, user } = req.body;
     // console.log(req.file);
-    const pdfBuffer = req.file.buffer || null;
-    const pdfPath = req.file.path;
-    const fs = require("fs");
-    const dataBuffer = fs.readFileSync(pdfPath);
-    const pdfData = await pdfParse(dataBuffer);
+    // const pdfBuffer = req.file.buffer || null;
+    // const pdfPath = req.file.path;
+    // const fs = require("fs");
+    // const dataBuffer = fs.readFileSync(pdfPath);
+    const pdfData = await pdfParse(req.file.buffer);
 
     const prompt = `
             You are a resume screening assistant.
