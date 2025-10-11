@@ -60,7 +60,7 @@ exports.addResume = async (req, res) => {
 
     await newResume.save();
 
-    fs.unlinkSync(pdfPath); // remove temp file
+    // fs.unlinkSync(pdfPath); // remove temp file
 
     res
       .status(200)
