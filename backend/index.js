@@ -6,10 +6,16 @@ require("dotenv").config();
 
 require("./conn");
 app.use(express.json());
+
+const cors = require("cors");
+
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://resumematchai-9qpb.onrender.com",
+    ],
   })
 );
 
