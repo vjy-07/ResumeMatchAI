@@ -7,8 +7,6 @@ require("dotenv").config();
 require("./conn");
 app.use(express.json());
 
-const cors = require("cors");
-
 app.use(
   cors({
     credentials: true,
