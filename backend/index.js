@@ -14,8 +14,15 @@ app.use(
       "http://localhost:5173",
       "https://resumematchai-9qpb.onrender.com",
     ],
-  })
+  }),
 );
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    service: "ResumeMatchAI Backend",
+  });
+});
 
 const UserRoutes = require("./Routes/user");
 const ResumeRoutes = require("./Routes/resume");
